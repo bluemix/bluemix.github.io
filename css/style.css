@@ -7,6 +7,9 @@
 #    font-family: 'Amariya-ExtraLight';,
 #    font-style: normal,
 #    src: url('../fonts/amariya/fonts/Monotype-Amariya-ExtraLight.ttf'),
+.article-comment-link {
+  float: right;
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -410,10 +413,11 @@ h2.article-head {
 .logo {
   background: url("images/logo.png");
   background-size: contain;
-  width: 150px;
-  height: 44px;
-  margin-top: -7px;
+  width: 225px;
+  height: 30px;
+  margin-top: 2px;
   margin-right: 10px;
+  filter: drop-shadow(0px 0px 1em #8388a3);
 }
 .home-link {
   display: flex;

@@ -101,25 +101,22 @@
       <!-- <a href="http://bluemix.github.io/en/2017/felidae/#disqus_thread" class="article-comment-link">comment</a> -->
 
     
-    <section id="comments">
-    <script>
-    var disqus_config = function () {
+     <section id="comments">
+      <script>
+        var disqus_shortname = 'bluemixme';
         
-            this.page.url = 'http://bluemix.github.io/en/2017/felidae/';
+        var disqus_url = 'http://bluemix.github.io/en/2017/felidae/';
         
-        this.page.identifier = 'felidae';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'disqus_FoW5JlagXA' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-</section>
+        (function(){
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+</section> 
     
-
-
 
   </article>
 </main>
@@ -173,7 +170,7 @@
     &copy; 2017 | Powered by
            <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
-    <a href="https://github.com/bluemix">blueMix</a>
+    <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
   </p>
 </footer>
 
