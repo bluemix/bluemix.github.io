@@ -59,7 +59,8 @@ index_generator:
   order_by: -date
   
 
-
+# Disqus
+disqus_shortname: bluemixme
 
 # Category & Tag
 default_category: uncategorized
@@ -86,13 +87,16 @@ theme: rexo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/bluemix/bluemix.github.io.git
+  branch: master
+  message: "deploying with rexo theme"
 
 social:
   github: https://github.com/bluemix
   github_username: bluemix
   stackoverflow: https://stackoverflow.com/users/1150190/abdulmomen-عبدالمؤمن
-  twitter: https://twitter.com/bluemix
+  twitter: https://twitter.com/bluemix2
   facebook: https://fb.com/bluemix
   linkedin: https://www.linkedin.com/in/bluemix2
   instagram: https://instagram.com/bluemix

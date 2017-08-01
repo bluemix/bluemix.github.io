@@ -10,38 +10,10 @@ tags:
   - اندرويد
 ---
 
-أجزاء من كود `كوتلن`
+مقتطفات من بعض الحكم
 
-{% raw %}
-<div dir="ltr">
-{% endraw %}
+{% ltr %}
+“A small leak will sink a great ship.” - Benjamin Franklin
+{% endltr %}
 
-``` kotlin
-package io.fomalhaut.shoppingiqdriver.Activities
-
-import io.fomalhaut.shoppingiqdriver.Helpers.PrefsManager
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
-
-open class BaseActivity : android.support.v7.app.AppCompatActivity() {
-
-  override fun onCreate(savedInstanceState: android.os.Bundle?) {
-    super.onCreate(savedInstanceState)
-    PrefsManager.INSTANCE().reconfigureLayoutAndLocale(this, window)
-  }
-
-  override fun onResume() {
-    super.onResume()
-    PrefsManager.INSTANCE().reconfigureLayoutAndLocale(this, window)
-  }
-
-  override fun attachBaseContext(newBase: android.content.Context) {
-    super.attachBaseContext(uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper.wrap(newBase))
-  }
-
-}
-```
-
-{% raw %}
-</div>
-{% endraw %}
-
+"لو أنك عشتَ في الماضي و تصرفت كأنك في الماضي ، سوف يكون صعباً على المُستقبلِ أن يراكَ." - Body of Lies
