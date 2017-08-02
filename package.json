@@ -17,7 +17,7 @@
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
-    "hexo-tag-ltr": "0.0.2",
-    "hexo-tag-rtl": "0.0.1"
+    "hexo-tag-ltr": "0.0.3",
+    "hexo-tag-rtl": "0.0.3"
   }
 }
