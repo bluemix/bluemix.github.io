@@ -54,7 +54,7 @@
   padding: 1em;
   margin: 0 auto;
   height: 100%;
-  max-width: 530px;
+  max-width: 600px;
   position: relative;
   opacity: 0;
   transform: translateY(-20px);
@@ -586,7 +586,7 @@ h2.article-head {
 .markdown-content p code,
 .article-summary p code {
   background-color: #f8f8f8;
-  color: #e96900;
+  color: #475671;
   padding: 3px 5px;
   font-size: 0.6em;
   margin: 0 2px;

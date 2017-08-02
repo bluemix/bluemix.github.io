@@ -7,7 +7,7 @@
   <meta name="keyword" content="">
   <title>
     
-      مدونة عبدالمؤمن | AbdElmomen Blog
+      Project | مدونة عبدالمؤمن | AbdElmomen Blog
     
   </title>
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
@@ -62,48 +62,61 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archive</h2>
+  <h2>المشاريع</h2>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/ar/2017/multilingual-blogging-with-Hexo/" class="archive-title">التدوين بأكثر من لغة مع هيكسو</a>
-        <p class="archive-date">08-01</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/en/2017/multilingual-blogging-with-Hexo/" class="archive-title">Multilingual blogging with Hexo</a>
-        <p class="archive-date">08-01</p>
-      </div>
-    
-  </div>
-</section>
-  
+<main class="app-body project-app">
+  <div class="card-container" id="all-project"></div>
 </main>
-
 <script>
-  (function () {
-    var url = 'http://bluemix.github.io/archives/2017/index.html';
+  (function() {
+    var url = 'http://bluemix.github.io/ar/projects/index.html';
     $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
-  })();
+    $('.header').removeClass('fixed-header')
+    $.ajax({
+      headers: {
+        Accept: 'application/vnd.github.v3.raw'
+      },
+      type: 'get',
+      url: 'https://api.github.com/users/bluemix/repos',
+      success: function (data) {
+        var repos = data.sort(function(a, b) {
+          return (b.stargazers_count - a.stargazers_count)
+        }).slice(0, 6)
+        var cardHtml = repos.map(function(item) {
+          var description = item.description
+          if (description.replace(/[\u0391-\uFFE5]/g, "aa").length > 72) {
+            description = description.slice(0, 72) + '...'
+          }
+          return (
+            '<section class="project-card">' + 
+              '<a class="card-wrap" href="'+ item.html_url +'" target="_blank">' +
+                '<div class="card-header" data-name="'+ item.name +'"></div>' +
+                '<h3 class="card-title">' + item.name + '</h3>' +
+                '<p class="card-description">' + description + '</p>' +
+                '<div class="card-footer">' +
+                  '<span><i class="fa fa-star"></i>'+ item.stargazers_count +'</span>' +
+                  '<span><i class="fa fa-code-fork"></i>' + item.forks_count +'</span>' +
+                '</div>' +
+              '</a>' +
+            '</section>'
+          )
+        }).join('')
+        $('#all-project').html(cardHtml)
+        $('.card-header').each(function() {
+          var name = $(this).data('name');
+          $(this).geopattern(name);
+        })
+      }
+    });
+  })()
 </script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2017 | Powered by
-           <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2017 | مبني على
+           <a href="https://hexo.io" target="_blank">هيكسو</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
   </p>

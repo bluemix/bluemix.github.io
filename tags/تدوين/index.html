@@ -61,157 +61,42 @@
   </div>
 </header>
 
-    
-
-    <div class="sidebar box-right">
-      <aside id="sidebar">
-    
-    <div >
-        <div >
-            <ul>
-                
-                    <li >
-
-                         <div class="tooltip">
-                            <a class="side-link" href="/archives/">📗</a>
-                            <span class="tooltiptext">Archive | الأرشيف</span>
-                        </div> 
-                    </li>
-                
-                    <li >
-
-                         <div class="tooltip">
-                            <a class="side-link" href="/quotes/">📝</a>
-                            <span class="tooltiptext">Quotes | حكم</span>
-                        </div> 
-                    </li>
-                
-                    <li >
-
-                         <div class="tooltip">
-                            <a class="side-link" href="/music">🎵</a>
-                            <span class="tooltiptext">Songs & Music | موسيقى و أغاني</span>
-                        </div> 
-                    </li>
-                
-                    <li >
-
-                         <div class="tooltip">
-                            <a class="side-link" href="/inspired">💖</a>
-                            <span class="tooltiptext">Inspired by | أشخاص أحبهم</span>
-                        </div> 
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-</aside>
-
-    </div>
+    <div id="article-banner">
+  <h2>Archive</h2>
+</div>
+<main class="app-body" id="archives">
   
-
-<main class="app-body">
-
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2017
+  </h1>
+  <div class="section-list">
     
-    <article class="article-card" dir="rtl">
-      <h2 class="article-head">
-        <a href="/ar/2017/multilingual-blogging-with-Hexo/">التدوين بأكثر من لغة مع هيكسو</a>
-      </h2>
-      
-        
-  <a href="/tags#تدوين" >
-    <span class="tag-code">تدوين</span>
-  </a>
-
-  <a href="/tags#هيكسو" >
-    <span class="tag-code">هيكسو</span>
-  </a>
-
-  <a href="/tags#عربي" >
-    <span class="tag-code">عربي</span>
-  </a>
-
-  <a href="/tags#انشاء مدونة" >
-    <span class="tag-code">انشاء مدونة</span>
-  </a>
-
-  <a href="/tags#موقع ثابت" >
-    <span class="tag-code">موقع ثابت</span>
-  </a>
-
-  <a href="/tags#ستاتك سايت" >
-    <span class="tag-code">ستاتك سايت</span>
-  </a>
-
-      
-      <p class="article-date">August 1, 2017</p>
-
-    </article>
-  
-    <article class="article-card" dir="ltr">
-      <h2 class="article-head">
-        <a href="/en/2017/multilingual-blogging-with-Hexo/">Multilingual blogging with Hexo</a>
-      </h2>
-      
-        
-  <a href="/tags#blogging" >
-    <span class="tag-code">blogging</span>
-  </a>
-
-  <a href="/tags#hexo" >
-    <span class="tag-code">hexo</span>
-  </a>
-
-  <a href="/tags#multilingual" >
-    <span class="tag-code">multilingual</span>
-  </a>
-
-  <a href="/tags#rtl" >
-    <span class="tag-code">rtl</span>
-  </a>
-
-  <a href="/tags#right-to-left" >
-    <span class="tag-code">right-to-left</span>
-  </a>
-
-  <a href="/tags#arabic" >
-    <span class="tag-code">arabic</span>
-  </a>
-
-  <a href="/tags#hebrew" >
-    <span class="tag-code">hebrew</span>
-  </a>
-
-  <a href="/tags#persian" >
-    <span class="tag-code">persian</span>
-  </a>
-
-  <a href="/tags#create" >
-    <span class="tag-code">create</span>
-  </a>
-
-  <a href="/tags#static site generator" >
-    <span class="tag-code">static site generator</span>
-  </a>
-
-  <a href="/tags#nodejs" >
-    <span class="tag-code">nodejs</span>
-  </a>
-
-      
-      <p class="article-date">August 1, 2017</p>
-
-    </article>
-  
-
-
-
+    
+      <div class="section-list-item">
+        <a href="/ar/2017/multilingual-blogging-with-Hexo/" class="archive-title">التدوين بأكثر من لغة مع هيكسو</a>
+        <p class="archive-date">08-01</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/en/2017/multilingual-blogging-with-Hexo/" class="archive-title">Multilingual blogging with Hexo</a>
+        <p class="archive-date">08-01</p>
+      </div>
+    
+  </div>
+</section>
   
 </main>
 
-
+<script>
+  (function () {
+    var url = 'http://bluemix.github.io/tags/تدوين/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
