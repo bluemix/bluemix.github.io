@@ -581,8 +581,8 @@ h2.article-head {
 }
 .markdown-content p,
 .article-summary p {
-  line-height: 1.6em;
-  font-size: 1.4em;
+  line-height: 1.15em;
+  font-size: 1.2em;
 }
 .markdown-content p code,
 .article-summary p code {
@@ -612,7 +612,8 @@ h2.article-head {
 .markdown-content h4,
 .article-summary h4 {
   font-size: 1.2em;
-  margin: 10px 0px 0px;
+  margin: 5px 0px 0px 0px;
+  font-weight: normal;
 }
 .markdown-content h4:before,
 .article-summary h4:before {
@@ -625,7 +626,9 @@ h2.article-head {
 }
 .markdown-content h5,
 .article-summary h5 {
-  font-size: 1em;
+  font-weight: normal;
+  line-height: 1em;
+  font-size: 1.23em;
   margin: 0.8em 0;
 }
 .markdown-content blockquote,
