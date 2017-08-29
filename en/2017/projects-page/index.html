@@ -7,7 +7,7 @@
   <meta name="keyword" content="">
   <title>
     
-      مدونة عبدالمؤمن | AbdElmomen Blog
+      Projects Page | مدونة عبدالمؤمن | AbdElmomen Blog
     
   </title>
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
@@ -90,51 +90,113 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archive</h2>
+  <h2>Projects Page</h2>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2017
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/ar/2017/projects-page/" class="archive-title">صفحة المشاريع</a>
-        <p class="archive-date">08-29</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/en/2017/projects-page/" class="archive-title">Projects Page</a>
-        <p class="archive-date">08-29</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/ar/2017/multilingual-blogging-with-Hexo/" class="archive-title">التدوين بأكثر من لغة مع هيكسو</a>
-        <p class="archive-date">08-01</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/en/2017/multilingual-blogging-with-Hexo/" class="archive-title">Multilingual Blogging with Hexo</a>
-        <p class="archive-date">08-01</p>
-      </div>
-    
-  </div>
+
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"   dir="ltr"><p>I am really happy to creat a list of projects I’ve done in the past years, specifically from 2010 till now. I spent the whole yesterday working on it. I was lucky to have screenshots of most projects. I also concluded that, after each new release, there must be screenshots recorded in order to save the history of the app chronology. You can see the list here <a href="http://bluemix.me/projects" target="_blank" rel="external">http://bluemix.me/projects</a>. <br><br></p>
+<p>Most of my major projects was at <a href="http://earthlinktele.com" target="_blank" rel="external">Earthlink Telecommuncations</a> company, where great stuff was built. I am really proud of them. I see the projects as only the beginnings of professionalism in building mobile apps. I hope to build a useful library or software that users can benefit from it. I hope to leverage or push the software of best practices here locally; and at the same time, to learn and apply what creative developers world wide create and shape the software industry. As being said: <a href="https://en.wikipedia.org/wiki/Think_globally,_act_locally" target="_blank" rel="external">Think globally, act locally</a>.<br><br></p>
+<p>One of the main prjects that I’d like to create is an Arabic programming language for kids to learn programming at schools. Imagine, you can programin an Android app using a simple Arabic programming language! a language that has DSL like Kotlin, so you can build UIs using DSL. You know, just a thought :) </p>
 </section>
-  
+    
+    <p class="post-date" dir="ltr">August 29, 2017</p>
+
+    
+      <div class="tags"    dir="ltr">
+        
+  <a href="/tags#android" >
+    <span class="tag-code">android</span>
+  </a>
+
+  <a href="/tags#projects" >
+    <span class="tag-code">projects</span>
+  </a>
+
+  <a href="/tags#list" >
+    <span class="tag-code">list</span>
+  </a>
+
+  <a href="/tags#mobile apps" >
+    <span class="tag-code">mobile apps</span>
+  </a>
+
+  <a href="/tags#UI" >
+    <span class="tag-code">UI</span>
+  </a>
+
+  <a href="/tags#iOS" >
+    <span class="tag-code">iOS</span>
+  </a>
+
+      </div>
+    
+
+
+    
+      <section id="comments">
+        
+      <script>
+        var disqus_shortname = 'bluemixme';
+        
+        var disqus_url = 'http://bluemix.github.io/en/2017/projects-page/';
+        
+        (function(){
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      </section>
+    
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'http://bluemix.github.io/tags/right-to-left/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://bluemix.github.io/en/2017/projects-page/';
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+      
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    })
+
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
