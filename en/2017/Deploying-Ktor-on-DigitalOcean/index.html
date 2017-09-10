@@ -7,7 +7,7 @@
   <meta name="keyword" content="">
   <title>
     
-      Quotes | حِكم | مدونة عبدالمؤمن | AbdElmomen Blog
+      Deploying Ktor on DigitalOcean | مدونة عبدالمؤمن | AbdElmomen Blog
     
   </title>
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
@@ -90,25 +90,70 @@
 </header>
 
     <div id="article-banner">
-  <h2>Quotes | حِكم</h2>
+  <h2>Deploying Ktor on DigitalOcean</h2>
 </div>
 
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"   dir=""><blockquote><p>What I cannot create, I do not understand</p>
-<footer><strong>Richard Feynman</strong></footer></blockquote>
-<blockquote><p>Believe nothing you hear, and only one half that you see.</p>
-<footer><strong>Edgar Allan Poe</strong><cite>The System of Doctor Tarr and Professor Fether</cite></footer></blockquote>
-<blockquote><p>be softer with you.<br>you are a breathing thing.<br>a memory to someone.<br>a home to a life.</p>
-<footer><strong>Nayyirah Waheed</strong></footer></blockquote>
-<blockquote><p>You shall listen to all sides and filter them from yourself.</p>
-<footer><strong>Whitman</strong><cite>Song of Myself</cite></footer></blockquote>
-<blockquote><p>Edit your life frequently and ruthlessly. It’s your masterpiece after all.</p>
-<footer><strong>Nathan W. Morris,</strong><cite><a href="http://wordsnquotes.com" target="_blank" rel="external">wordsnquotes.com</a></cite></footer></blockquote>
+    <section class="markdown-content"   dir="ltr"><p>I was using <a href="http://ktor.io" target="_blank" rel="external">Ktor</a> for about a month and I have created a personal project, and I wanted to be deployed on a <a href="https://cloud.digitalocean.com" target="_blank" rel="external">DigitalOcean</a> droplet, that has Fedora 26 installed. Here are the basic steps I’ve collected in order to deploy your Ktor server running.</p>
+<p>First of all, let’s install some required packages.</p>
+<h3 id="Pre-requesities"><a href="#Pre-requesities" class="headerlink" title="Pre-requesities"></a>Pre-requesities</h3><h4 id="wget-unzip-zip"><a href="#wget-unzip-zip" class="headerlink" title="wget, unzip, zip"></a><strong>wget, unzip, zip</strong></h4><p>  <code>$ sudo dnf install wget unzip zip</code></p>
+<h4 id="SDKMAN"><a href="#SDKMAN" class="headerlink" title="SDKMAN!"></a><strong><a href="https://github.com/sdkman/sdkman-cli" target="_blank" rel="external">SDKMAN!</a></strong></h4><p>  <code>$ curl -s https://get.sdkman.io | bash</code></p>
+<p>  then, this must be run at your user directory, e.g., at <code>/home/USERNANE/</code> path:<br>  <code>$ source &quot;/home/bluemix/.sdkman/bin/sdkman-init.sh&quot;</code></p>
+<h3 id="Java-and-Kotlin"><a href="#Java-and-Kotlin" class="headerlink" title="Java and Kotlin"></a>Java and Kotlin</h3><p>After SDKMAN! has been installed, you should now install Java and Kotlin<br><code>$ sdk install java</code><br><code>$ sdk install kotlin</code></p>
+<h3 id="Running-Ktor…"><a href="#Running-Ktor…" class="headerlink" title="Running Ktor…"></a>Running Ktor…</h3><p>Now, locate your Ktor project,</p>
+<p><code>$ cd your-ktor-project/</code></p>
+<p>You might want to have the Gradle script be executable,<br><code>$ chmod +x gradlew</code></p>
+<p>then, run the Gradle script,</p>
+<p><code>$ ./gradlew run</code></p>
+<ul>
+<li>You might get <em><strong>Caught an exception trying to connect to Kotlin Daemon</strong></em>, by which solved through running the above command again 🤔</li>
+</ul>
+<p>Your server should be running now!</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers" target="_blank" rel="external">Well-know ports</a>, e.g., 80, requires root permission.</p>
+</blockquote>
+<h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions?"></a>Questions?</h3><p>Please feel free to ask any question or explanation if there are missing content or not clear at some point.</p>
 </section>
     
-    <p class="post-date" dir="">July 30, 2017</p>
+    <p class="post-date" dir="ltr">September 10, 2017</p>
 
+    
+      <div class="tags"    dir="ltr">
+        
+  <a href="/tags#Kotlin" >
+    <span class="tag-code">Kotlin</span>
+  </a>
+
+  <a href="/tags#Ktor" >
+    <span class="tag-code">Ktor</span>
+  </a>
+
+  <a href="/tags#Gradle" >
+    <span class="tag-code">Gradle</span>
+  </a>
+
+  <a href="/tags#Deployment" >
+    <span class="tag-code">Deployment</span>
+  </a>
+
+  <a href="/tags#Running" >
+    <span class="tag-code">Running</span>
+  </a>
+
+  <a href="/tags#DigitalOcean" >
+    <span class="tag-code">DigitalOcean</span>
+  </a>
+
+  <a href="/tags#Linux" >
+    <span class="tag-code">Linux</span>
+  </a>
+
+  <a href="/tags#Fedora" >
+    <span class="tag-code">Fedora</span>
+  </a>
+
+      </div>
     
 
 
@@ -118,7 +163,7 @@
       <script>
         var disqus_shortname = 'bluemixme';
         
-        var disqus_url = 'http://bluemix.github.io/quotes/index.html';
+        var disqus_url = 'http://bluemix.github.io/en/2017/Deploying-Ktor-on-DigitalOcean/';
         
         (function(){
           var dsq = document.createElement('script');
@@ -139,7 +184,7 @@
 
 <script>
   (function () {
-    var url = 'http://bluemix.github.io/quotes/index.html';
+    var url = 'http://bluemix.github.io/en/2017/Deploying-Ktor-on-DigitalOcean/';
     $('#article-banner').geopattern(url)
     $('.header').removeClass('fixed-header')
 
