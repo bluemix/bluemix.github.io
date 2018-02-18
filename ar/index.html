@@ -103,7 +103,7 @@
 <p><code>Kotlin</code> here :D<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> io.fomalhaut.shoppingiqdriver.Activities</div><div class="line"></div><div class="line"><span class="keyword">import</span> io.fomalhaut.shoppingiqdriver.Helpers.PrefsManager</div><div class="line"><span class="keyword">import</span> uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper</div><div class="line"></div><div class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseActivity</span> : <span class="type">android.support.v7.app.AppCompatActivity</span></span>() &#123;</div><div class="line"></div><div class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">android</span>.<span class="type">os</span>.<span class="type">Bundle</span>?)</span></span> &#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState)</div><div class="line">    PrefsManager.INSTANCE().reconfigureLayoutAndLocale(<span class="keyword">this</span>, window)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onResume</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">super</span>.onResume()</div><div class="line">    PrefsManager.INSTANCE().reconfigureLayoutAndLocale(<span class="keyword">this</span>, window)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">attachBaseContext</span><span class="params">(newBase: <span class="type">android</span>.<span class="type">content</span>.<span class="type">Context</span>)</span></span> &#123;</div><div class="line">    <span class="keyword">super</span>.attachBaseContext(uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper.wrap(newBase))</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </section>
     
-    <p class="post-date" dir="">٣٠ تموز يوليو ٢٠١٧</p>
+    <p class="post-date" dir="">٣٠ يوليو ٢٠١٧</p>
 
     
 
@@ -177,7 +177,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2017 | مبني على
+    &copy; 2018 | مبني على
            <a href="https://hexo.io" target="_blank">هيكسو</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>

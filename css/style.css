@@ -586,7 +586,8 @@ h2.article-head {
 .markdown-content p,
 .article-summary p {
   line-height: 1.15em;
-  font-size: 1.28em;
+  font-size: 1.32em;
+strong
 }
 .markdown-content p code,
 .article-summary p code {
@@ -598,10 +599,6 @@ h2.article-head {
   border-radius: 2px;
   white-space: nowrap;
 }
-.markdown-content p strong,
-.article-summary p strong {
-  font-family: 'Amariya-Medium';
-}
 .markdown-content h1,
 .article-summary h1 {
   font-size: 1.8em;
@@ -609,13 +606,13 @@ h2.article-head {
 .markdown-content h2,
 .article-summary h2 {
   font-size: 1.5em;
+  margin-top: 2em;
+  border-bottom: 1px solid #e5e5e5;
 }
 .markdown-content h3,
 .article-summary h3 {
-  margin: 1em 0;
   font-size: 1.3em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e5e5e5;
+  margin-top: 2em;
 }
 .markdown-content h4,
 .article-summary h4 {
