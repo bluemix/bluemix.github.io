@@ -100,10 +100,10 @@
 </blockquote>
 <p>We’ll assume you want to write in English (<em>en</em>) and Arabic (<em>ar</em>) posts.</p>
 <p>First of all, we’ll modify your current <code>_config.yml</code> file</p>
-<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a><code>_config.yml</code></h3><p>The <code>_config.yml</code> of your blog should contain the language attributes, like<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">language:</div><div class="line">  - en</div><div class="line">  - ar</div><div class="line">locale: en</div><div class="line">i18n:</div><div class="line">  type: [page, post]</div><div class="line">  generator: [index, archive, category, tag]</div><div class="line">permalink_defaults:</div><div class="line">  lang: en</div><div class="line">i18n_dir: :lang</div><div class="line"></div></pre></td></tr></table></figure></p>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a><code>_config.yml</code></h3><p>The <code>_config.yml</code> of your blog should contain the language attributes, like<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language:</span><br><span class="line">  - en</span><br><span class="line">  - ar</span><br><span class="line">locale: en</span><br><span class="line">i18n:</span><br><span class="line">  type: [page, post]</span><br><span class="line">  generator: [index, archive, category, tag]</span><br><span class="line">permalink_defaults:</span><br><span class="line">  lang: en</span><br><span class="line">i18n_dir: :lang</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p><code>locale: en</code> or <code>locale: ar</code> for example, determines the langauge of your blog. Now we should have the theme language files defined.</p>
 <h3 id="i18n-theme-localizations"><a href="#i18n-theme-localizations" class="headerlink" title="i18n theme localizations"></a>i18n theme localizations</h3><p>To do this, inside your current <code>themes</code> directory, you should have the languages of your site in the <code>languages</code> directory.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.</div><div class="line">├── themes</div><div class="line">|   └── theme-name</div><div class="line">|   |   └── languages</div><div class="line">|   |   |   └── en.yml</div><div class="line">|   |   |   └── ar.yml</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── themes</span><br><span class="line">|   └── theme-name</span><br><span class="line">|   |   └── languages</span><br><span class="line">|   |   |   └── en.yml</span><br><span class="line">|   |   |   └── ar.yml</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>If you don’t find the target language you want, for example, the Arabic language is not found, you can duplicate the <code>en.yml</code> file to <code>ar.yml</code> and translate its words.</p>
 <blockquote>
 <p>At the time of this writing, this blog uses <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a> theme, that has support for left-to-right (LTR) and right-to-left (RTL) writings. </p>
@@ -111,15 +111,15 @@
 <h3 id="Creating-multilingual-posts"><a href="#Creating-multilingual-posts" class="headerlink" title="Creating multilingual posts"></a>Creating multilingual posts</h3><p>Let’s suppose we want to write a new English article about <a href="http://kotlinlang.org" target="_blank" rel="noopener">Kotlin</a> lambdas,<br><code>hexo new &#39;Kotlin lambdas&#39; --lang en</code><br>this will creates a new post of the English version at <code>_posts/en/Kotlin-lambdas.md</code></p>
 <p>and then<br><code>hexo new &#39;Kotlin lambdas&#39; --lang ar</code><br>that creates the <em>Arabic</em> version in <code>_posts/ar/Kotlin lambdas.md</code>,</p>
 <p>and so the files structure will be like this</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">.</div><div class="line">├── source</div><div class="line">|   └── _posts</div><div class="line">|   |   └── en</div><div class="line">|   |   |   └── Kotlin-lambdas.md</div><div class="line">|   |   └── ar</div><div class="line">|   |   |   └── Kotlin-lambdas.md</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts</span><br><span class="line">|   |   └── en</span><br><span class="line">|   |   |   └── Kotlin-lambdas.md</span><br><span class="line">|   |   └── ar</span><br><span class="line">|   |   |   └── Kotlin-lambdas.md</span><br></pre></td></tr></table></figure>
 <h3 id="Mixed-left-to-right-LTR-and-right-to-left-RTL-wirtings"><a href="#Mixed-left-to-right-LTR-and-right-to-left-RTL-wirtings" class="headerlink" title="Mixed left-to-right (LTR) and right-to-left (RTL) wirtings"></a>Mixed left-to-right (LTR) and right-to-left (RTL) wirtings</h3><p>Unlike English, the Arabic language is written from right-to-left (RTL language). So, writing Arabic content inside English one will make the Arabic flows in the same as the English direction, which is wrong.</p>
 <p>There are two <em>tag</em> plugins that foce RTL or LTR direction used when writing.</p>
 <h3 id="hexo-tag-rtl"><a href="#hexo-tag-rtl" class="headerlink" title="hexo-tag-rtl"></a><a href="https://github.com/bluemix/hexo-tag-rtl" target="_blank" rel="noopener">hexo-tag-rtl</a></h3><p>You can use it to force RTL layout direction when used in a mixed with LTR (i.e., English).</p>
 <p>If you have an English text and you want to add Arabic inside of it:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% rtl %&#125;</div><div class="line">مقتطفات من بعض الحكم</div><div class="line">&#123;% endrtl %&#125;</div><div class="line"></div><div class="line">“A small leak will sink a great ship.” - Benjamin Franklin</div><div class="line"></div><div class="line">&#123;% rtl %&#125;</div><div class="line">&quot;لو أنك عشتَ في الماضي و تصرفت كأنك في الماضي ، سوف يكون صعباً على المُستقبلِ أن يراكَ.&quot; - Body of Lies</div><div class="line">&#123;% endrtl %&#125;</div></pre></td></tr></table></figure> 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% rtl %&#125;</span><br><span class="line">مقتطفات من بعض الحكم</span><br><span class="line">&#123;% endrtl %&#125;</span><br><span class="line"></span><br><span class="line">“A small leak will sink a great ship.” - Benjamin Franklin</span><br><span class="line"></span><br><span class="line">&#123;% rtl %&#125;</span><br><span class="line">&quot;لو أنك عشتَ في الماضي و تصرفت كأنك في الماضي ، سوف يكون صعباً على المُستقبلِ أن يراكَ.&quot; - Body of Lies</span><br><span class="line">&#123;% endrtl %&#125;</span><br></pre></td></tr></table></figure> 
 <h3 id="hexo-tag-ltr"><a href="#hexo-tag-ltr" class="headerlink" title="hexo-tag-ltr"></a><a href="https://github.com/bluemix/hexo-tag-ltr" target="_blank" rel="noopener">hexo-tag-ltr</a></h3><p>Is the inverse to the above one.</p>
 <p>Now, if you have an Arabic text and you want to write English inside:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">مقتطفات من بعض الحكم</div><div class="line"></div><div class="line">&#123;% ltr %&#125;</div><div class="line">“A small leak will sink a great ship.” - Benjamin Franklin</div><div class="line">&#123;% endltr %&#125;</div><div class="line"></div><div class="line">&quot;لو أنك عشتَ في الماضي و تصرفت كأنك في الماضي ، سوف يكون صعباً على المُستقبلِ أن يراكَ.&quot; - Body of Lies</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">مقتطفات من بعض الحكم</span><br><span class="line"></span><br><span class="line">&#123;% ltr %&#125;</span><br><span class="line">“A small leak will sink a great ship.” - Benjamin Franklin</span><br><span class="line">&#123;% endltr %&#125;</span><br><span class="line"></span><br><span class="line">&quot;لو أنك عشتَ في الماضي و تصرفت كأنك في الماضي ، سوف يكون صعباً على المُستقبلِ أن يراكَ.&quot; - Body of Lies</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>And that is it! </p>
 <p>You can see the blog <a href="https://github.com/bluemix/bluemix.github.io/tree/rexo-theme" target="_blank" rel="noopener">source code</a> in order to understand how writing mixed RTL and LTR languages is done.</p>
 <blockquote>
@@ -132,10 +132,6 @@
     
       <div class="tags"    dir="ltr">
         
-  <a href="/tags#arabic" >
-    <span class="tag-code">arabic</span>
-  </a>
-
   <a href="/tags#blogging" >
     <span class="tag-code">blogging</span>
   </a>
@@ -154,6 +150,10 @@
 
   <a href="/tags#right-to-left" >
     <span class="tag-code">right-to-left</span>
+  </a>
+
+  <a href="/tags#arabic" >
+    <span class="tag-code">arabic</span>
   </a>
 
   <a href="/tags#hebrew" >
