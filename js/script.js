@@ -8,11 +8,11 @@
   var isOpen = false
 
   $(document).ready(function () {
-    NProgress.start()
-    $('#nprogress .bar').css({
-      'background': '#42b983'
-    })
-    $('#nprogress .spinner').hide()
+    // NProgress.start()
+    // $('#nprogress .bar').css({
+    //   'background': '#42b983'
+    // })
+    // $('#nprogress .spinner').hide()
 
     var fade = {
       transform: 'translateY(0)',
@@ -28,11 +28,11 @@
     app.css(fade)
   })
 
-  window.onload = function () {
-    setTimeout(function () {
-      NProgress.done()
-    }, 200)
-  }
+  // window.onload = function () {
+  //   setTimeout(function () {
+  //     NProgress.done()
+  //   }, 200)
+  // }
 
   $('.menu').on('click', function () {
     if (!header.hasClass('fixed-header') || isOpen) {
