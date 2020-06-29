@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head><meta name="generator" content="Hexo 3.9.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="مدونة عبد المؤمن">
-  <meta name="keyword" content="">
+  <meta name="keyword" content>
   <title>
     
       Synchronous Network Calls in Swift CLI | مدونة عبدالمؤمن | AbdElmomen Blog
@@ -45,7 +45,7 @@
     </a>
     <ul class="right-list">
       
-        <li class="list-item">
+        <li class="list-item" >
           <!-- <div class="tooltip"> -->
             <!-- <span class="tooltiptext">📟</span> -->
 
@@ -54,7 +54,7 @@
           
         </li>
       
-        <li class="list-item">
+        <li class="list-item" >
           <!-- <div class="tooltip"> -->
             <!-- <span class="tooltiptext">👨🏻‍💻</span> -->
 
@@ -95,7 +95,7 @@
 
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content" dir="ltr"><p>[⚠️ Incomplete Article ]</p>
+    <section class="markdown-content"   dir="ltr"><p>[⚠️ Incomplete Article ]</p>
 <h3 id="Swift-Package-Manager"><a href="#Swift-Package-Manager" class="headerlink" title="Swift Package Manager"></a>Swift Package Manager</h3><p>swift package init –type executable<br>swift package generate-xcodeproj<br>swift build<br>.build/debug/CommandLineTool</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// swift-tools-version:4.1</span></span><br><span class="line"><span class="comment">// The swift-tools-version declares the minimum version of Swift required to build this package.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> PackageDescription</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> package = <span class="type">Package</span>(</span><br><span class="line">    name: <span class="string">"CommandLineTool"</span>,</span><br><span class="line">    dependencies: [</span><br><span class="line">        .package(</span><br><span class="line">            url: <span class="string">"https://github.com/mxcl/PromiseKit"</span>,</span><br><span class="line">            from: <span class="type">Version</span>(<span class="string">"6.0.0"</span>)</span><br><span class="line">        ),</span><br><span class="line">        .package(</span><br><span class="line">            url: <span class="string">"https://github.com/yannickl/AwaitKit.git"</span>,</span><br><span class="line">            from: <span class="type">Version</span>(<span class="string">"5.0.0"</span>)</span><br><span class="line">        ),</span><br><span class="line">        .package(</span><br><span class="line">            url: <span class="string">"https://github.com/SwiftyJSON/SwiftyJSON.git"</span>,</span><br><span class="line">            from: <span class="type">Version</span>(<span class="string">"4.0.0"</span>)</span><br><span class="line">        )</span><br><span class="line">    ],</span><br><span class="line">    targets: [</span><br><span class="line">        .target(</span><br><span class="line">            name: <span class="string">"CommandLineTool"</span>,</span><br><span class="line">            dependencies: [<span class="string">"CommandLineToolCore"</span>]</span><br><span class="line">        ),</span><br><span class="line">        .target(</span><br><span class="line">            name: <span class="string">"CommandLineToolCore"</span>,</span><br><span class="line">            dependencies: [<span class="string">"PromiseKit"</span>, <span class="string">"AwaitKit"</span>, <span class="string">"SwiftyJSON"</span>]</span><br><span class="line">        )</span><br><span class="line">    ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <h3 id="XCode"><a href="#XCode" class="headerlink" title="XCode"></a>XCode</h3><h3 id="PromiseKit"><a href="#PromiseKit" class="headerlink" title="PromiseKit"></a>PromiseKit</h3><h3 id="AwaitKit"><a href="#AwaitKit" class="headerlink" title="AwaitKit"></a>AwaitKit</h3><h3 id="SwiftyJSON"><a href="#SwiftyJSON" class="headerlink" title="SwiftyJSON"></a>SwiftyJSON</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> PromiseKit</span><br><span class="line"><span class="keyword">import</span> AwaitKit</span><br><span class="line"><span class="keyword">import</span> SwiftyJSON</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">CommandLineTool</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">let</span> arguments: [<span class="type">String</span>]</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">init</span>(arguments: [<span class="type">String</span>] = <span class="type">CommandLine</span>.arguments) &#123;</span><br><span class="line">    <span class="keyword">self</span>.arguments = arguments</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">func</span> <span class="title">fetch</span><span class="params">(url: URL)</span></span> -&gt; <span class="type">Promise</span>&lt;<span class="type">Data</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">Promise</span> &#123; seal <span class="keyword">in</span></span><br><span class="line">      <span class="type">URLSession</span>.shared.dataTask(with: url) &#123; data, <span class="number">_</span>, error <span class="keyword">in</span></span><br><span class="line">        seal.resolve(data, error)</span><br><span class="line">        &#125;.resume()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">run</span><span class="params">()</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"fetching..."</span>)</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> data = <span class="keyword">try</span> await(fetch(url: <span class="type">URL</span>(string: <span class="string">"https://api.github.com/users/bluemix"</span>)!))</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">"JSON(data)[\"name\"]: <span class="subst">\(JSON(data)</span>["</span>name<span class="string">"])"</span>)</span><br><span class="line">      </span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">"error: <span class="subst">\(error)</span>"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
@@ -103,37 +103,37 @@
     <p class="post-date" dir="ltr">May 8, 2018</p>
 
     
-      <div class="tags" dir="ltr">
+      <div class="tags"    dir="ltr">
         
-  <a href="/tags#Swift">
+  <a href="/tags#Swift" >
     <span class="tag-code">Swift</span>
   </a>
 
-  <a href="/tags#Sync">
+  <a href="/tags#Sync" >
     <span class="tag-code">Sync</span>
   </a>
 
-  <a href="/tags#Network">
+  <a href="/tags#Network" >
     <span class="tag-code">Network</span>
   </a>
 
-  <a href="/tags#HTTP">
+  <a href="/tags#HTTP" >
     <span class="tag-code">HTTP</span>
   </a>
 
-  <a href="/tags#JSON">
+  <a href="/tags#JSON" >
     <span class="tag-code">JSON</span>
   </a>
 
-  <a href="/tags#Async Await">
+  <a href="/tags#Async Await" >
     <span class="tag-code">Async Await</span>
   </a>
 
-  <a href="/tags#XCode">
+  <a href="/tags#XCode" >
     <span class="tag-code">XCode</span>
   </a>
 
-  <a href="/tags#Swift Package Manager">
+  <a href="/tags#Swift Package Manager" >
     <span class="tag-code">Swift Package Manager</span>
   </a>
 
@@ -210,7 +210,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2019 | Powered by
+    &copy; 2020 | Powered by
            <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>

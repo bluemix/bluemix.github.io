@@ -140,6 +140,7 @@ pre {
   margin: 0 2px 5px 0;
   border-radius: 2px;
   white-space: nowrap;
+  font-display: swap;
 }
 .article-card {
   padding-bottom: 20px;
@@ -151,6 +152,7 @@ h2.article-head {
   font-size: 1.8em;
   margin-bottom: 12px;
   font-weight: 550;
+  font-display: swap;
 }
 .article-head > a {
   color: #34495e;
