@@ -589,7 +589,6 @@ h2.article-head {
 .article-summary p {
   line-height: 1.15em;
   font-size: 1.32em;
-strong
 }
 .markdown-content p code,
 .article-summary p code {
@@ -600,6 +599,10 @@ strong
   margin: 0 2px;
   border-radius: 2px;
   white-space: nowrap;
+}
+.markdown-content p strong,
+.article-summary p strong {
+  font-weight: 800;
 }
 .markdown-content h1,
 .article-summary h1 {
