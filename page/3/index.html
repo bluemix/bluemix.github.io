@@ -14,17 +14,24 @@
 
   <!-- <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"> -->
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet"> -->
   
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight_tomorrow.min.css">
 
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <!-- <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script> -->
   <!-- <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script> -->
   <!-- 
 <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script>
  -->
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/geopattern.min.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/fastclick.min.js"></script>
+
 
   
   <script>
@@ -219,7 +226,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2021 | Powered by
+    &copy; 2022 | Powered by
            <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a>
@@ -237,15 +244,12 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+  FastClick.attach(document.body);
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
+  $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine == 'false') {
         figure.find('.gutter').hide();
@@ -259,7 +263,6 @@
       figure.attr('data-lang', lang.toUpperCase());
       hljs.highlightBlock(block);
     });
-  })
 </script>
 <!-- Baidu Tongji -->
 

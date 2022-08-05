@@ -14,17 +14,24 @@
 
   <!-- <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"> -->
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet"> -->
   
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight_tomorrow.min.css">
 
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <!-- <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script> -->
   <!-- <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script> -->
   <!-- 
 <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script>
  -->
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/geopattern.min.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/fastclick.min.js"></script>
+
 
   
   <script>
@@ -133,10 +140,10 @@
 <p><strong>Changes to This Privacy Policy</strong></p>
 <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
 <p><strong>Contact Us</strong></p>
-<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:&#x61;&#x6c;&#x74;&#x61;&#109;&#x65;&#x65;&#x72;&#115;&#x6f;&#102;&#116;&#119;&#x61;&#114;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x61;&#x6c;&#x74;&#x61;&#109;&#x65;&#x65;&#x72;&#115;&#x6f;&#102;&#116;&#119;&#x61;&#114;&#101;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a>.</p>
+<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:&#x61;&#x6c;&#x74;&#x61;&#109;&#x65;&#101;&#x72;&#115;&#x6f;&#102;&#116;&#x77;&#97;&#x72;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#x6c;&#x74;&#x61;&#109;&#x65;&#101;&#x72;&#115;&#x6f;&#102;&#116;&#x77;&#97;&#x72;&#x65;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>.</p>
 </section>
     
-    <p class="post-date" dir="">١ أغسطس ٢٠١٩</p>
+    <p class="post-date" dir="">٥ أغسطس ٢٠٢٢</p>
 
     
 
@@ -210,7 +217,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2021 | مبني على
+    &copy; 2022 | مبني على
            <a href="https://hexo.io" target="_blank">هيكسو</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a>
@@ -228,15 +235,12 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+  FastClick.attach(document.body);
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
+  $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine == 'false') {
         figure.find('.gutter').hide();
@@ -250,7 +254,6 @@
       figure.attr('data-lang', lang.toUpperCase());
       hljs.highlightBlock(block);
     });
-  })
 </script>
 <!-- Baidu Tongji -->
 

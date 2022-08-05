@@ -14,17 +14,24 @@
 
   <!-- <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"> -->
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet"> -->
   
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight_tomorrow.min.css">
 
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <!-- <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script> -->
   <!-- <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script> -->
   <!-- 
 <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script>
  -->
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/geopattern.min.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/fastclick.min.js"></script>
+
 
   
   <script>
@@ -234,7 +241,7 @@
 </blockquote>
 <h3 id="eCortex"><a href="#eCortex" class="headerlink" title="eCortex"></a>eCortex</h3><h5 id="My-first-ever-Android-app-for-university-graduation-project-Start-the-camara-touch-on-an-English-word-and-Arabic-translation-is-show-as-a-pop-up-It-used-OpenCV-to-segment-the-image-and-separate-shapes-to-be-passed-to-Tesseract-learned-lots-from-Gaut-am-I-was-having-a-SQLite-vocabularies-taken-from-online-xlsx-file-in-order-to-translate-the-segmented-parsed-English-word-It-was-really-a-thing-to-me-back-in-2012"><a href="#My-first-ever-Android-app-for-university-graduation-project-Start-the-camara-touch-on-an-English-word-and-Arabic-translation-is-show-as-a-pop-up-It-used-OpenCV-to-segment-the-image-and-separate-shapes-to-be-passed-to-Tesseract-learned-lots-from-Gaut-am-I-was-having-a-SQLite-vocabularies-taken-from-online-xlsx-file-in-order-to-translate-the-segmented-parsed-English-word-It-was-really-a-thing-to-me-back-in-2012" class="headerlink" title="My first-ever Android app for university graduation project. Start the camara , touch on an English word and Arabic translation is show as a pop-up! It used OpenCV to segment the image and separate shapes to be passed to Tesseract (learned lots from Gaut.am). I was having a SQLite vocabularies (taken from online xlsx file) in order to translate the segmented, parsed English word. It was really a thing to me back in 2012."></a>My first-ever Android app for university graduation project. Start the camara , touch on an English word and Arabic translation is show as a pop-up! It used OpenCV to segment the image and separate shapes to be passed to Tesseract (learned lots from <a href="http://gaut.am/making-an-ocr-android-app-using-tesseract/" target="_blank" rel="noopener">Gaut.am</a>). I was having a SQLite vocabularies (taken from online xlsx file) in order to translate the segmented, parsed English word. It was really <em>a thing</em> to me back in 2012.</h5><h3 id="eBook-Broswer"><a href="#eBook-Broswer" class="headerlink" title="eBook Broswer"></a>eBook Broswer</h3><h5 id="A-NET-Windows-desktop-application-built-using-C-and-WPF-and-SQLServer-co-work-with-my-friend-that-shows-a-list-of-local-PDFs-as-a-list-so-that-the-user-can-select-the-book-easily-on-a-single-place"><a href="#A-NET-Windows-desktop-application-built-using-C-and-WPF-and-SQLServer-co-work-with-my-friend-that-shows-a-list-of-local-PDFs-as-a-list-so-that-the-user-can-select-the-book-easily-on-a-single-place" class="headerlink" title="A .NET Windows desktop application built using C# and WPF and SQLServer (co-work with my friend) that shows a list of local PDFs as a list so that the user can select the book easily on a single place."></a>A .NET Windows desktop application built using C# and WPF and SQLServer (co-work with my friend) that shows a list of local PDFs as a list so that the user can select the book easily on a single place.</h5></section>
     
-    <p class="post-date" dir="">٢٢ أبريل ٢٠١٨</p>
+    <p class="post-date" dir="">٥ أغسطس ٢٠٢٢</p>
 
     
 
@@ -308,7 +315,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2021 | مبني على
+    &copy; 2022 | مبني على
            <a href="https://hexo.io" target="_blank">هيكسو</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a>
@@ -326,15 +333,12 @@
   }
 </script>
 <script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
+  FastClick.attach(document.body);
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
+  $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine == 'false') {
         figure.find('.gutter').hide();
@@ -348,7 +352,6 @@
       figure.attr('data-lang', lang.toUpperCase());
       hljs.highlightBlock(block);
     });
-  })
 </script>
 <!-- Baidu Tongji -->
 
