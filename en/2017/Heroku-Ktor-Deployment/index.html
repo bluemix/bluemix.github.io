@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="مدونة عبد المؤمن">
+  <meta name="keyword" content="">
+  <title>
+    
+      Heroku Ktor Deployment | مدونة عبدالمؤمن | AbdElmomen Blog
+    
+  </title>
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+  <!-- <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"> -->
+  <!-- <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet"> -->
+  
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/highlight_tomorrow.min.css">
+
+  <!-- <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script> -->
+  <!-- <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script> -->
+  <!-- 
+<script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+ -->
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/geopattern.min.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script src="/js/fastclick.min.js"></script>
+
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-104099189-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <!-- <span>مدونة عبدالمؤمن | AbdElmomen Blog</span> -->
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">📟</span> -->
+
+            
+            <a href="/projects/" class="item-link">📟</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">👨🏻‍💻</span> -->
+
+            
+            <a href="/about/" class="item-link">👨🏻‍💻</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/projects/" class="menu-link">📟</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">👨🏻‍💻</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Heroku Ktor Deployment</h2>
+</div>
+
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"   dir="ltr"><p>I’ll assume you already know basic knowledge about <a href="http://ktor.io/" target="_blank" rel="noopener">Ktor</a> and you have built and ran you server locally using Gradle. In this post, the comming text will show you how to run it under <a href="https://heroku.com/" target="_blank" rel="noopener">Heroku</a>.</p>
+<h3 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h3><p>First of all you need to install <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroku CLI</a>. Please follow the instructions on how to install it at your platform.</p>
+<h4 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h4><p><code>heroku login</code><br>and fill your login information.</p>
+<h4 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h4><p><code>heroku create</code></p>
+<h4 id="Git-linking"><a href="#Git-linking" class="headerlink" title="Git linking"></a>Git linking</h4><p><code>&lt;APP_NAME&gt;</code> is the name of your app created in the above step.<br><code>heroku git:remote -a &lt;APP_NAME&gt;</code></p>
+<h3 id="Gradle-Shadow-Jar"><a href="#Gradle-Shadow-Jar" class="headerlink" title="Gradle Shadow Jar"></a>Gradle Shadow Jar</h3><p>When your code gets pushed on Heroku, it will goes throgh the building phase, by which you should provie Gradle task name to be executed. We’ll use <a href="http://imperceptiblethoughts.com/shadow/" target="_blank" rel="noopener">Shadow</a> plug-in to build and produce an executable jar file to be run at Heroku after the build succeds. So, add the following code to your <code>build.gradle</code> file</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shadowJar &#123;</span><br><span class="line">    baseName &#x3D; &#39;&lt;Project Name&gt;&#39;</span><br><span class="line">    classifier &#x3D; null</span><br><span class="line">    version &#x3D; null</span><br><span class="line">    destinationDir &#x3D; new File(&#39;server&#39;) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>here, the produced .jar will be created at the <em>server</em> folder.</p>
+<p>Now, let’s inform Heroku about our building task</p>
+<p><code>heroku config:set GRADLE_TASK=&quot;shadowJar&quot;</code></p>
+<h3 id="Procfile"><a href="#Procfile" class="headerlink" title="Procfile"></a>Procfile</h3><p>After build has finished at Heroku, it will execute a command in the file named <em>Procfile</em> that runs your executable code. So, </p>
+<p><code>touch Procfile</code><br>and add the following single line in it</p>
+<p><code>web: java -jar server/&lt;Project NAME&gt;.jar</code></p>
+<h3 id="Running-locally"><a href="#Running-locally" class="headerlink" title="Running locally"></a>Running locally</h3><p>In order to verify your app works fine as expected, let’s run your app locall<br><code>heroku local web</code></p>
+<p>Your server should be working the same as you were expected and worked with previousely. Try to open it on a browser window to check.</p>
+<h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><p>After finishing all of the above steps, let’s deploy the project </p>
+<p><code>git push heroku master</code></p>
+<p>… and that’s.</p>
+<p>Try checking it at <code>https://&lt;APP_NAME&gt;.heroku.com</code></p>
+<h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><p>Links helped me a lot understanding how to deploy Ktor on Heroku</p>
+<h4 id="Want-Kotlin-on-the-Server-Do-Ktor"><a href="#Want-Kotlin-on-the-Server-Do-Ktor" class="headerlink" title="Want Kotlin on the Server? Do Ktor"></a><a href="https://www.bignerdranch.com/blog/want-kotlin-on-the-server-do-ktor/" target="_blank" rel="noopener">Want Kotlin on the Server? Do Ktor</a></h4><h4 id="Deploying-Kotlin-on-Heroku-with-Ktor"><a href="#Deploying-Kotlin-on-Heroku-with-Ktor" class="headerlink" title="Deploying Kotlin on Heroku with Ktor"></a><a href="https://jkutner.github.io/2017/04/10/kotlin-heroku-ktor.html" target="_blank" rel="noopener">Deploying Kotlin on Heroku with Ktor</a></h4><h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions?"></a>Questions?</h3><p>Please feel free to ask any question or explanation if there are missing content or not clear at some point.</p>
+</section>
+    
+    <p class="post-date" dir="ltr">September 12, 2017</p>
+
+    
+      <div class="tags"    dir="ltr">
+        
+  <a href="/tags#Kotlin" >
+    <span class="tag-code">Kotlin</span>
+  </a>
+
+  <a href="/tags#Ktor" >
+    <span class="tag-code">Ktor</span>
+  </a>
+
+  <a href="/tags#Gradle" >
+    <span class="tag-code">Gradle</span>
+  </a>
+
+  <a href="/tags#Deployment" >
+    <span class="tag-code">Deployment</span>
+  </a>
+
+  <a href="/tags#Running" >
+    <span class="tag-code">Running</span>
+  </a>
+
+  <a href="/tags#Heroku" >
+    <span class="tag-code">Heroku</span>
+  </a>
+
+      </div>
+    
+
+
+    
+      <section id="comments">
+        
+      <script>
+        var disqus_shortname = 'bluemixme';
+        
+        var disqus_url = 'http://bluemix.github.io/en/2017/Heroku-Ktor-Deployment/';
+        
+        (function(){
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+        </div>
+      </section>
+    
+  </article>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://bluemix.github.io/en/2017/Heroku-Ktor-Deployment/';
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+      
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    })
+
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2022 | Powered by
+           <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  FastClick.attach(document.body);
+</script>
+
+<script>
+  var hasLine = 'true';
+  $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine == 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+</script>
+<!-- Baidu Tongji -->
+
+
+<script src="/js/script.js"></script>
+
+  </body>
+</html>

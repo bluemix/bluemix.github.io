@@ -6,7 +6,18 @@
 #@font-face,
 #    font-family: 'Amariya-ExtraLight';,
 #    font-style: normal,
-#    src: url('../fonts/amariya/fonts/Monotype-Amariya-ExtraLight.ttf'),
+#    src: url('../fonts/amariya/fonts/Monotype-Amariya-ExtraLight.ttf') {
+  font-family: 'Amariya-Medium';
+  font-style: medium;
+  src: url("../fonts/amariya/fonts/Monotype-Amariya-Medium.ttf");
+}
+.article-comment-link {
+  float: right;
+}
+.comments {
+  background: #f00;
+  height: 100px;
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -47,11 +58,12 @@
   padding: 1em;
   margin: 0 auto;
   height: 100%;
-  max-width: 530px;
+  max-width: 600px;
   position: relative;
   opacity: 0;
   transform: translateY(-20px);
   transition: all 0.4s;
+  unicode-bidi: embed;
 }
 #header {
   border: 1px solid #000;
@@ -128,6 +140,7 @@ pre {
   margin: 0 2px 5px 0;
   border-radius: 2px;
   white-space: nowrap;
+  font-display: swap;
 }
 .article-card {
   padding-bottom: 20px;
@@ -139,6 +152,7 @@ h2.article-head {
   font-size: 1.8em;
   margin-bottom: 12px;
   font-weight: 550;
+  font-display: swap;
 }
 .article-head > a {
   color: #34495e;
@@ -410,10 +424,11 @@ h2.article-head {
 .logo {
   background: url("images/logo.png");
   background-size: contain;
-  width: 150px;
-  height: 44px;
-  margin-top: -7px;
+  width: 225px;
+  height: 30px;
+  margin-top: 2px;
   margin-right: 10px;
+  filter: drop-shadow(0px 0px 1em #8388a3);
 }
 .home-link {
   display: flex;
@@ -546,7 +561,7 @@ h2.article-head {
 }
 .markdown-content,
 .article-summary {
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 .markdown-content pre,
@@ -572,18 +587,22 @@ h2.article-head {
 }
 .markdown-content p,
 .article-summary p {
-  line-height: 1.6em;
-  font-size: 1.4em;
+  line-height: 1.15em;
+  font-size: 1.32em;
 }
 .markdown-content p code,
 .article-summary p code {
   background-color: #f8f8f8;
-  color: #e96900;
+  color: #475671;
   padding: 3px 5px;
   font-size: 0.6em;
   margin: 0 2px;
   border-radius: 2px;
   white-space: nowrap;
+}
+.markdown-content p strong,
+.article-summary p strong {
+  font-weight: 800;
 }
 .markdown-content h1,
 .article-summary h1 {
@@ -592,37 +611,41 @@ h2.article-head {
 .markdown-content h2,
 .article-summary h2 {
   font-size: 1.5em;
+  margin-top: 2em;
+  border-bottom: 1px solid #e5e5e5;
 }
 .markdown-content h3,
 .article-summary h3 {
-  margin: 1em 0;
   font-size: 1.3em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e5e5e5;
+  margin-top: 2em;
 }
 .markdown-content h4,
 .article-summary h4 {
-  margin: 1em 0;
   font-size: 1.2em;
+  margin: 5px 0px 0px 0px;
+  font-weight: normal;
 }
 .markdown-content h4:before,
 .article-summary h4:before {
   content: "#";
-  color: #42b983;
+  color: #ece3da;
   margin-right: 5px;
+  margin-left: 10px;
   font-size: 1.2em;
   font-weight: 700;
 }
 .markdown-content h5,
 .article-summary h5 {
-  font-size: 1em;
+  font-weight: normal;
+  line-height: 1em;
+  font-size: 1.23em;
   margin: 0.8em 0;
 }
 .markdown-content blockquote,
 .article-summary blockquote {
   margin: 1em 0;
-  padding: 15px 20px;
-  border-left: 4px solid #42b983;
+  padding: 10px 10px;
+  border-left: 2px solid #42b983;
   background: #f8f8f8;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
@@ -643,8 +666,7 @@ h2.article-head {
 .markdown-content img,
 .article-summary img {
   max-width: 100%;
-  display: block;
-  margin: 20px auto;
+  margin: auto auto;
   cursor: zoom-in;
 }
 .markdown-content figure,
