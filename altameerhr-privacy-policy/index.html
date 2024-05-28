@@ -115,7 +115,7 @@
 <p>The app does use third party services that may collect information used to identify you.</p>
 <p>Link to privacy policy of third party service providers used by the app</p>
 <ul>
-<li><a href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services</a></li>
+<li><a href="https://www.google.com/policies/privacy/">Google Play Services</a></li>
 </ul>
 <p><strong>Log Data</strong></p>
 <p>We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
@@ -140,7 +140,7 @@
 <p><strong>Changes to This Privacy Policy</strong></p>
 <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
 <p><strong>Contact Us</strong></p>
-<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:&#97;&#x6c;&#x74;&#97;&#x6d;&#101;&#101;&#x72;&#115;&#x6f;&#102;&#116;&#x77;&#97;&#114;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#97;&#x6c;&#x74;&#97;&#x6d;&#101;&#101;&#x72;&#115;&#x6f;&#102;&#116;&#x77;&#97;&#114;&#x65;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a>.</p>
+<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:&#97;&#x6c;&#116;&#97;&#109;&#x65;&#101;&#114;&#x73;&#x6f;&#102;&#116;&#x77;&#x61;&#x72;&#x65;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#97;&#x6c;&#116;&#97;&#109;&#x65;&#101;&#114;&#x73;&#x6f;&#102;&#116;&#x77;&#x61;&#x72;&#x65;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a>.</p>
 </section>
     
     <p class="post-date" dir="">August 5, 2022</p>
@@ -191,9 +191,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

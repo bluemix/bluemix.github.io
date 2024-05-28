@@ -201,7 +201,7 @@
 <li>متى ما تنتهي من أتمام التسجيل ، توجَّه إلى هذا <a href="http://developer.apple.com/enroll/duns-lookup/#/search">الرابط</a></li>
 <li>إبحث عن إسم منظمتك أو الشركة (إن تكون غير متوفرة حالياً ، فقط إنتظر الخطوة القادمة)</li>
 <li>ستجد في أسفل الصفحة: “Request a new DUNS Number from D&amp;B” ، إضغط عليها كي يتم إرسال معلوماتك إلى D&amp;B.</li>
-<li>ستقوم بإستلام إميل ، من <a href="mailto:&#x61;&#115;&#105;&#x61;&#46;&#100;&#101;&#x76;&#64;&#97;&#115;&#x69;&#x61;&#x2e;&#x61;&#112;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x61;&#115;&#105;&#x61;&#46;&#100;&#101;&#x76;&#64;&#97;&#115;&#x69;&#x61;&#x2e;&#x61;&#112;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a> ، حول طلبك.</li>
+<li>ستقوم بإستلام إميل ، من <a href="mailto:&#97;&#115;&#x69;&#x61;&#x2e;&#100;&#101;&#118;&#x40;&#97;&#x73;&#105;&#97;&#46;&#97;&#x70;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">&#97;&#115;&#x69;&#x61;&#x2e;&#100;&#101;&#118;&#x40;&#97;&#x73;&#105;&#97;&#46;&#97;&#x70;&#112;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;</a> ، حول طلبك.</li>
 <li>ستستلم رقم الـ DUNS ، عادةً من 14 إلى 20 يوم ؛ إما إذا لم يحدث ذلك ، عليك مراسلتهم.</li>
 <li>بعدها إذا إلى  <a href="https://developer.apple.com/enroll">موقع التسجيل للمطورين لآبل</a> و إختر Organizational Account التي تتطلب DUNS.</li>
 <li>أدخل كافة معلومات التسجيل ، و من ثم سيتصلون بك للتأكيد.</li>
@@ -220,12 +220,12 @@
     
       <div class="tags"    dir="rtl">
         
-  <a href="/tags#العراق" >
-    <span class="tag-code">العراق</span>
-  </a>
-
   <a href="/tags#انشاء حساب Apple Developer" >
     <span class="tag-code">انشاء حساب Apple Developer</span>
+  </a>
+
+  <a href="/tags#العراق" >
+    <span class="tag-code">العراق</span>
   </a>
 
   <a href="/tags#Apple Developer Account" >
@@ -299,9 +299,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

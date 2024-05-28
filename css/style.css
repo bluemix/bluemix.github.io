@@ -655,13 +655,23 @@ h2.article-head {
 .markdown-content ol,
 .article-summary ol {
   overflow: auto;
-  margin: 15px 0;
+  margin: 0px 0;
 }
 .markdown-content ul li,
 .article-summary ul li,
 .markdown-content ol li,
 .article-summary ol li {
-  padding: 5px 0;
+  padding: 0px 0;
+  font-size: 1.32em;
+}
+.markdown-content ul li:before,
+.article-summary ul li:before,
+.markdown-content ol li:before,
+.article-summary ol li:before {
+  content: "•";
+  color: #ece3da;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .markdown-content img,
 .article-summary img {
@@ -939,6 +949,12 @@ h2.article-head {
 }
 .author .share-icons .icon-stackoverflow {
   color: #f28033;
+}
+.author .share-icons .icon-pexels {
+  color: #02a081;
+}
+.author .share-icons .icon-mastodon {
+  color: #6464ff;
 }
 .project-app {
   max-width: 1020px;

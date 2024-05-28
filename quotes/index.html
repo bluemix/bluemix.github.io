@@ -124,7 +124,7 @@
 
 
 <blockquote><p>Edit your life frequently and ruthlessly. It’s your masterpiece after all.</p>
-<footer><strong>Nathan W. Morris,</strong><cite><a href="http://wordsnquotes.com" target="_blank" rel="noopener">wordsnquotes.com</a></cite></footer></blockquote>
+<footer><strong>Nathan W. Morris,</strong><cite><a href="http://wordsnquotes.com">wordsnquotes.com</a></cite></footer></blockquote>
 </section>
     
     <p class="post-date" dir="">July 30, 2017</p>
@@ -175,9 +175,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

@@ -106,13 +106,13 @@
 
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"   dir="ltr"><p>I’ll assume you already know basic knowledge about <a href="http://ktor.io/" target="_blank" rel="noopener">Ktor</a> and you have built and ran you server locally using Gradle. In this post, the comming text will show you how to run it under <a href="https://heroku.com/" target="_blank" rel="noopener">Heroku</a>.</p>
-<h3 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h3><p>First of all you need to install <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener">Heroku CLI</a>. Please follow the instructions on how to install it at your platform.</p>
+    <section class="markdown-content"   dir="ltr"><p>I’ll assume you already know basic knowledge about <a href="http://ktor.io/">Ktor</a> and you have built and ran you server locally using Gradle. In this post, the comming text will show you how to run it under <a href="https://heroku.com/">Heroku</a>.</p>
+<h3 id="Heroku-CLI"><a href="#Heroku-CLI" class="headerlink" title="Heroku CLI"></a>Heroku CLI</h3><p>First of all you need to install <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a>. Please follow the instructions on how to install it at your platform.</p>
 <h4 id="Login"><a href="#Login" class="headerlink" title="Login"></a>Login</h4><p><code>heroku login</code><br>and fill your login information.</p>
 <h4 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h4><p><code>heroku create</code></p>
 <h4 id="Git-linking"><a href="#Git-linking" class="headerlink" title="Git linking"></a>Git linking</h4><p><code>&lt;APP_NAME&gt;</code> is the name of your app created in the above step.<br><code>heroku git:remote -a &lt;APP_NAME&gt;</code></p>
-<h3 id="Gradle-Shadow-Jar"><a href="#Gradle-Shadow-Jar" class="headerlink" title="Gradle Shadow Jar"></a>Gradle Shadow Jar</h3><p>When your code gets pushed on Heroku, it will goes throgh the building phase, by which you should provie Gradle task name to be executed. We’ll use <a href="http://imperceptiblethoughts.com/shadow/" target="_blank" rel="noopener">Shadow</a> plug-in to build and produce an executable jar file to be run at Heroku after the build succeds. So, add the following code to your <code>build.gradle</code> file</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shadowJar &#123;</span><br><span class="line">    baseName &#x3D; &#39;&lt;Project Name&gt;&#39;</span><br><span class="line">    classifier &#x3D; null</span><br><span class="line">    version &#x3D; null</span><br><span class="line">    destinationDir &#x3D; new File(&#39;server&#39;) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Gradle-Shadow-Jar"><a href="#Gradle-Shadow-Jar" class="headerlink" title="Gradle Shadow Jar"></a>Gradle Shadow Jar</h3><p>When your code gets pushed on Heroku, it will goes throgh the building phase, by which you should provie Gradle task name to be executed. We’ll use <a href="http://imperceptiblethoughts.com/shadow/">Shadow</a> plug-in to build and produce an executable jar file to be run at Heroku after the build succeds. So, add the following code to your <code>build.gradle</code> file</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shadowJar &#123;</span><br><span class="line">    baseName = &#x27;&lt;Project Name&gt;&#x27;</span><br><span class="line">    classifier = null</span><br><span class="line">    version = null</span><br><span class="line">    destinationDir = new File(&#x27;server&#x27;) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>here, the produced .jar will be created at the <em>server</em> folder.</p>
 <p>Now, let’s inform Heroku about our building task</p>
 <p><code>heroku config:set GRADLE_TASK=&quot;shadowJar&quot;</code></p>
@@ -126,7 +126,7 @@
 <p>… and that’s.</p>
 <p>Try checking it at <code>https://&lt;APP_NAME&gt;.heroku.com</code></p>
 <h3 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h3><p>Links helped me a lot understanding how to deploy Ktor on Heroku</p>
-<h4 id="Want-Kotlin-on-the-Server-Do-Ktor"><a href="#Want-Kotlin-on-the-Server-Do-Ktor" class="headerlink" title="Want Kotlin on the Server? Do Ktor"></a><a href="https://www.bignerdranch.com/blog/want-kotlin-on-the-server-do-ktor/" target="_blank" rel="noopener">Want Kotlin on the Server? Do Ktor</a></h4><h4 id="Deploying-Kotlin-on-Heroku-with-Ktor"><a href="#Deploying-Kotlin-on-Heroku-with-Ktor" class="headerlink" title="Deploying Kotlin on Heroku with Ktor"></a><a href="https://jkutner.github.io/2017/04/10/kotlin-heroku-ktor.html" target="_blank" rel="noopener">Deploying Kotlin on Heroku with Ktor</a></h4><h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions?"></a>Questions?</h3><p>Please feel free to ask any question or explanation if there are missing content or not clear at some point.</p>
+<h4 id="Want-Kotlin-on-the-Server-Do-Ktor"><a href="#Want-Kotlin-on-the-Server-Do-Ktor" class="headerlink" title="Want Kotlin on the Server? Do Ktor"></a><a href="https://www.bignerdranch.com/blog/want-kotlin-on-the-server-do-ktor/">Want Kotlin on the Server? Do Ktor</a></h4><h4 id="Deploying-Kotlin-on-Heroku-with-Ktor"><a href="#Deploying-Kotlin-on-Heroku-with-Ktor" class="headerlink" title="Deploying Kotlin on Heroku with Ktor"></a><a href="https://jkutner.github.io/2017/04/10/kotlin-heroku-ktor.html">Deploying Kotlin on Heroku with Ktor</a></h4><h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions?"></a>Questions?</h3><p>Please feel free to ask any question or explanation if there are missing content or not clear at some point.</p>
 </section>
     
     <p class="post-date" dir="ltr">September 12, 2017</p>
@@ -205,9 +205,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

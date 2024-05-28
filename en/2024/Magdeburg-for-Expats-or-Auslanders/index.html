@@ -191,9 +191,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

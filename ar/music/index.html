@@ -129,17 +129,17 @@
 <blockquote><p>When I created users, snippets and tags CRUD REST in Expose and Ktor for Hawajes.</p>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/CZXLLMbJdZ4" frameborder="0" loading="lazy" allowfullscreen></iframe></div><footer><strong>August 15th</strong><cite>2017</cite></footer></blockquote>
 
-<blockquote><p>Publishing my new blog on <a href="http://bluemix.me/" target="_blank" rel="noopener">http://bluemix.me</a> 🙂</p>
+<blockquote><p>Publishing my new blog on <a href="http://bluemix.me/">http://bluemix.me</a> 🙂</p>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/z9BPMjL44Aw" frameborder="0" loading="lazy" allowfullscreen></iframe></div><footer><strong>August 3rd</strong><cite>2017</cite></footer></blockquote>
 
 
 
-<blockquote><p>I was listening to it while I was writing a blog <a href="http://bluemix.me/en/2017/multilingual-blogging-with-Hexo/" target="_blank" rel="noopener">post</a></p>
+<blockquote><p>I was listening to it while I was writing a blog <a href="http://bluemix.me/en/2017/multilingual-blogging-with-Hexo/">post</a></p>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/oomkO5nHxnY" frameborder="0" loading="lazy" allowfullscreen></iframe></div><footer><strong>August 2nd</strong><cite>2017</cite></footer></blockquote>
 
 
 
-<blockquote><p>Customized <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> theme <a href="https://github.com/yanm1ng/hexo-theme-vexo" target="_blank" rel="noopener">Vexo</a> to <a href="https://github.com/bluemix/hexo-theme-rexo" target="_blank" rel="noopener">Rexo</a>.</p>
+<blockquote><p>Customized <a href="https://hexo.io/">Hexo</a> theme <a href="https://github.com/yanm1ng/hexo-theme-vexo">Vexo</a> to <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>.</p>
 <div class="video-container"><iframe src="https://www.youtube.com/embed/o0Pt7M0weUI" frameborder="0" loading="lazy" allowfullscreen></iframe></div><footer><strong>August 1st</strong><cite>2017</cite></footer></blockquote>
 
 
@@ -194,9 +194,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')

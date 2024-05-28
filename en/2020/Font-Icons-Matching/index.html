@@ -127,11 +127,11 @@
 <br>
 
 
-<p>This is because the fonts doesn’t have the matching weight to select from (there is no <em>light</em> weight or the <em>regular</em> weight that matches good with the icons line width), and most importantly, they’re <a href="https://en.wikipedia.org/wiki/Serif" target="_blank" rel="noopener">serif fonts</a>. Most serif fonts have varying curvature width, which make them differ from the existing fixed line width icons.<br>For this reason , I’ll exclude them. </p>
+<p>This is because the fonts doesn’t have the matching weight to select from (there is no <em>light</em> weight or the <em>regular</em> weight that matches good with the icons line width), and most importantly, they’re <a href="https://en.wikipedia.org/wiki/Serif">serif fonts</a>. Most serif fonts have varying curvature width, which make them differ from the existing fixed line width icons.<br>For this reason , I’ll exclude them. </p>
 <blockquote>
 <p>Try to avoid <em>serif</em> fonts as possible (unless there are no other choise to select from).</p>
 </blockquote>
-<p>Row 5 is a hand-written font, and I’ll exlude it because I don’t use hand-written fonts for UI apps (unless you’re explicitly wants to use hand-written fonts in your app).<br>Row 4 is a <a href="https://en.wikipedia.org/wiki/Monospaced_font" target="_blank" rel="noopener">monospaced font</a>, that is used to display source code, for example. I’ll exlucde it too (and, again, unless you’re explicitly wants to use monospaced font in your UI design).</p>
+<p>Row 5 is a hand-written font, and I’ll exlude it because I don’t use hand-written fonts for UI apps (unless you’re explicitly wants to use hand-written fonts in your app).<br>Row 4 is a <a href="https://en.wikipedia.org/wiki/Monospaced_font">monospaced font</a>, that is used to display source code, for example. I’ll exlucde it too (and, again, unless you’re explicitly wants to use monospaced font in your UI design).</p>
 <p>This leaves us to the final round.</p>
 <h2 id="Best-matching"><a href="#Best-matching" class="headerlink" title="Best matching"></a>Best matching</h2><p>Below, are the best fonts that match the icons set. Both, icons and fonts, are consistent in line width. Row 1 font even has close curvitaures with the icons, which makes it the ideal and the preferred font for those icons.</p>
 <br>
@@ -140,7 +140,7 @@
 </center>
 <br>
 
-<p>And, following the same selection rules, I’ll use other similar fonts, <a href="https://en.wikipedia.org/wiki/Sans-serif" target="_blank" rel="noopener">sans-serifs</a>, and have matching weights. As you can see below, most fonts (if not all) have very good matching with the icons, and you can barely exlucde one that don’t fit. If you compare them with the first random fonts and weights, you’ll know the purpose of this article.</p>
+<p>And, following the same selection rules, I’ll use other similar fonts, <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serifs</a>, and have matching weights. As you can see below, most fonts (if not all) have very good matching with the icons, and you can barely exlucde one that don’t fit. If you compare them with the first random fonts and weights, you’ll know the purpose of this article.</p>
 <br>
 <center>
 <img src="/images/fonts_icons_matching/sans-serif-fonts.png" class="" width="320" title="Sans-serif fonts match perfectly with the icons set">
@@ -150,7 +150,7 @@
 <h2 id="Conslusions"><a href="#Conslusions" class="headerlink" title="Conslusions"></a>Conslusions</h2><p>Sans-serif fonts, with the same weight as the icons line width, will (mostly) have the match.<br>In the end, I hope you find this article helpful and assist you in selecting better fonts for you icons.</p>
 </section>
     
-    <p class="post-date" dir="ltr">December 10, 2020</p>
+    <p class="post-date" dir="ltr">December 9, 2020</p>
 
     
       <div class="tags"    dir="ltr">
@@ -210,9 +210,12 @@
       var imageH = $(this).height()
       
       var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      console.log('zoom: ' + zoom)
       zoom = zoom < 1 ? 1 : zoom
       zoom = zoom > 2 ? 2 : zoom
+      console.log('zoom: ' + zoom)
       var transY = (($(window).height() - imageH) / 2).toFixed(2)
+      console.log('transY: ' + transY)
 
       $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
       $('.image-view-wrap').addClass('wrap-active')
